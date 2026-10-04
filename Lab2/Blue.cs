@@ -119,36 +119,30 @@ namespace Lab2
         public (double a, int b, int c) Task7(double S, double I)
         {
             // code here
-            double a = 0; 
-            int b = 0; 
-            int c = 0; 
-            double run = S; 
-            int days = 1; 
-            if (S >= 100.0) 
-            { 
-                b = 1; 
+            double a = 0;
+            int b = 0;
+            int c = 0;
+            double d = 0;
+            int i = 0;
+            int w = 5;
+            double ansA = 0;
+            int ansB = 0;
+            while (i < 7 || ansB == 0 || S <= 42)
+            {
+                a += S;
+                b++;
+                i++;
+
+                if (i == 7) ansA = a;
+                if (a >= 100 && ansB == 0) ansB = b;
+                if (S <= 42) c++;
+
+                d = S * (1 + I / 100);
+                S = d;
+
             }
-            if (S > 42.0) 
-            { 
-                c = 1; 
-            } 
-            while (b == 0 || c == 0 || a == 0) {
-                days++;
-                S = S * (1.0 + (I / 100.0)); 
-                run += S; 
-                if (days == 7) 
-                { 
-                    a = run; 
-                } 
-                if (b == 0 && Math.Round(run, 2) >= 100.0) 
-                { 
-                    b = days; 
-                } 
-                if (c == 0 && Math.Round(S, 2) > 42.0) 
-                { 
-                    c = days; 
-                } 
-            }
+            b = ansB;
+            a = ansA;
             // end
             return (a, b, c);
         }
