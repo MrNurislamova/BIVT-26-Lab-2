@@ -11,10 +11,11 @@ namespace Lab2
         public double Task1(int n, double x)
         {
             double answer = 0;
-
+            double x1 = 1;
             // code here
             for (int i = 1; i <= n; i++) {
-                answer += (Math.Sin(x * i))/Math.Pow(x,i-1); 
+                answer += (Math.Sin(x * i))/x1;
+                x1 *= x;
 
             }
 
